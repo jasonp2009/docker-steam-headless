@@ -47,7 +47,7 @@ jobs:
           BUILD_DATE="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 
           SERVICE_NAME=steam-headless
-          DOCKER_HUB_IMAGE=docker.io/josh5/${SERVICE_NAME:?}
+          DOCKER_HUB_IMAGE=docker.io/jasonp20/${SERVICE_NAME:?}
           GHCR_IMAGE=ghcr.io/${ORG:?}/${SERVICE_NAME:?}
 
           DOCKER_TAGS=""
@@ -79,7 +79,7 @@ jobs:
           echo "Build: [$(date +"%F %T")] [${GITHUB_REF_NAME}] [${GITHUB_SHA}] [${FLAVOUR}]" > ./overlay/version.txt
 
           DOCKER_PUSH="true"
-          if [[ ${DOCKER_HUB_IMAGE} != 'docker.io/josh5/steam-headless' ]]; then
+          if [[ ${DOCKER_HUB_IMAGE} != 'docker.io/jasonp20/steam-headless' ]]; then
             DOCKER_PUSH="false"
           fi
           if [[ ${VERSION_TAG%/merge} =~ "pr-"* ]]; then
